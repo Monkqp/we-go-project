@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bukogpb1qgq1g"]
+
+[ext_resource type="PackedScene" uid="uid://pj334vewew0t" path="res://Components/ship.tscn" id="1_faumm"]
+[ext_resource type="PackedScene" uid="uid://c0kxcecemydxn" path="res://Components/entities/player.tscn" id="2_eghpa"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ship" parent="." instance=ExtResource("1_faumm")]
+position = Vector2(-576, -324)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_eghpa")]
+position = Vector2(14, -16)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(2, 5)

@@ -1,0 +1,4 @@
+res://Components/ship.tscn
+res://Scripts/player.gdshader
+res://Scenes/main.tscn
+res://Components/entities/player.tscn

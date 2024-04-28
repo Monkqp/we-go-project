@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0kxcecemydxn"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_js51t"]
+[ext_resource type="Shader" path="res://Scripts/player.gdshader" id="1_qbw61"]
+[ext_resource type="Texture2D" uid="uid://g2ono1m6pa6n" path="res://Assets/marine_character_TL.png" id="3_4os7n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ak8b"]
+shader = ExtResource("1_qbw61")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aabu8"]
+size = Vector2(28, 32)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_js51t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0ak8b")
+texture = ExtResource("3_4os7n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_aabu8")

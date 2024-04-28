@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://pj334vewew0t"]
+
+[ext_resource type="Texture2D" uid="uid://b8nyvd7i6cl8" path="res://Assets/texture_atlas.png" id="1_g7s1u"]
+[ext_resource type="Script" path="res://Scripts/ShipGenerator.gd" id="2_poyeh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jmshg"]
+texture = ExtResource("1_g7s1u")
+separation = Vector2i(1, 1)
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_usd88"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_jmshg")
+
+[node name="Ship" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_usd88")
+format = 2
+script = ExtResource("2_poyeh")
